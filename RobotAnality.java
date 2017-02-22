@@ -147,7 +147,7 @@ public class RobotAnality extends AdvancedRobot
 			setTurnRadarLeftRadians(NormalAngleBearing(angle_radar));
 			//disparamos
 	       //Situacion Gun y Disparo
-			power = max_power * (600/e_distance);
+			power = max_power * (max_distance * 2/e_distance);
 			temp = (20 - 3 * power);
 			angle = NormalAngleBearing(getHeadingRadians() + e_bearing - getGunHeadingRadians());
 			setTurnGunRightRadians(angle + angle * temp / 100 * Math.sin(dirrection));
