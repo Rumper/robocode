@@ -221,9 +221,9 @@ public class RobotAnality extends AdvancedRobot
 	public void onHitWall(HitWallEvent e) {
 		if(wall_time == 0){
 			dirrection *= -1;
-			setBack(max_distance + (int)Math.random() * max_distance);
-			execute();
 		}
-		 wall_time += 1;
+		setBack(max_distance + (int)Math.random() * max_distance);
+		execute();
+		wall_time += 1;
 	}
 }
