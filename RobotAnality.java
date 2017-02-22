@@ -215,7 +215,9 @@ public class RobotAnality extends AdvancedRobot
 	
 	public void onHitRobot(HitRobotEvent e){
 		setTurnGunLeftRadians(e.getBearingRadians());
-		fire(max_power/2);
+		fire(max_power);
+		setMaxVelocity(1);
+		execute();
 	}
 
 	public void onHitWall(HitWallEvent e) {
