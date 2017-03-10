@@ -96,16 +96,14 @@ public class RobotFightFinally extends AdvancedRobot
 		}
 		if(enemy.distance > safeDistance * 2.5){
 			Double distance = enemy.distance - safeDistance;
-			setTurnRight(getHeading() - enemy.heading + enemy.bearing + 90 * Math.cos(distance * PI/4));
+			setTurnRight(getHeading() - enemy.heading + enemy.bearing + Math.cos(distance * PI/4));
 			Double d = checkWall();
 			setAhead(distance);
 		}else{
-			Double x = Math.cos(getHeading()) * safeDistance - Math.cos(getHeading() - enemy.bearing) * safeDistance;
- 			Double y = Math.sin(getHeading() + enemy.bearing) * safeDistance - Math.sin(getHeading()) * safeDistance;
 			Double distance = checkWall();
-		    setTurnRight(enemy.bearing  + 70);
+		    setTurnRight(enemy.bearing  + 90);
 			setAhead(distance * dirrection);
-			if(getTime() % 30 == 0){
+			if(getTime() % 25 == 0){
 				dirrection *= -1;
 			}
 		}
